@@ -1,28 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Style.css">
     <title>Forms</title>
 </head>
+
 <body>
 
-    <form action="">
+    <!-- <form action="">
         <input type="text">
         <input type="text">
         <button type="submit">Schiaccia!</button>
+    </form> -->
+
+    <!-- <form action="http://mioserver.com/api/" method="post"> -->
+        <!-- Una volta che uso onsubmit, le altre forme non servono perché lo gestisce tutto javascript -->
+
+    <form id="my-form" onsubmit="formSubmit(event)">
+
+        <div>
+            <label for="name">Inserire il nome</label>
+            <input type="text" name="name" id="name" required minlength="3">
+            <!-- required: campo non saltabile (obbligatorio) -->
+             <!-- minlength='3': minimo 3 caratteri -->
+        </div>
+
+        <div>
+            <label for="surname">Inserire il cognome</label>
+            <input type="text" name="surname" id="surname" minlength="3">
+        </div>
+
+        <div>
+            <label for="yob">Inserire la data di nascita</label>
+            <input type="number" name="yob" id="yob">
+        </div>
+
+        <div>
+            <label for="gender">Inserire il genere</label>
+            <select name="gender" id="gender" required>
+                <option value="">Seleziona una opzione</option>
+                <option value="n/a">Non definito</option>
+                <option value="male">Maschio</option>
+                <option value="female">Femmina</option>
+            </select>
+        </div>
+
+
+        <button type="submit">Invia</button>
+    
+
+
+        <!-- <input type="text" name="" id="">
+        <input type="number" name="" id="">  
+        <input type="email" name="" id="">
+        <input type="checkbox" name="" id="">
+        <input type="datetime-local" name="" id="">
+        <input type="color" name="" id="">
+        <input type="file" name="" id="">
+        <textarea name="" id=""></textarea>
+        <select name="" id="">
+            <option value="">Prima scelta</option>
+            <option value="">Seconda scelta</option>
+            <option value="">Terza scelta</option>
+        </select> -->
     </form>
 
-    <form action="" method="post"></form>
-    
+<h2>
+    Trova il tuo pokemon
+</h2>
+<form id="pokeform" onsubmit="getPokemon(event)">
+    <!-- <div> -->
+        <!-- <label for="search-string">Inserisci il nome del Pokemon</label> -->
+        <input 
+        type="text" 
+        name="search-string" 
+        id="search-string" 
+        placeholder="Nome del Pokemon"
+        required
+        minlength="3">
+        <!-- placeholder serve per mostrare un testo di aiuto all'utente e come questo è autoesplicativo, label non è più necessario  -->
+    <!-- </div> -->
+    <button type="submit">Cerca</button>
+</form>
+
+<div id="pokemon-container">
+</div>
+
+
+
 </body>
+<script src="./App.js"></script>
 </html>
 
-    <!-- Il tag form serve a comunicare con il server. Inoltre, serve per inviare i dati inseriti dall'utente al server -->
-     <!-- Get per comunicare con il server (sito) ---  Get -> lettura -> Get All / Get Id -->
-      <!-- Delete cancella un elemento ---  Delete -> Cancellazione -> Delete Id (una Delete All sarebbe molto pericolosa) -->
-       <!-- Post serve alla creazione di nuovi elementi --- Post -> Creazione -> Post + dati -->
-        <!-- Put aggiorna un elemento esistente --- Put -> Replace / Aggiornamento (update) completo -> Put + Id + dati -->   
-         <!-- Patch va a integrare un dato corretto --- Patch -> correzione / update parziale -> Patch + Id + dati -->
-          <!-- Get e post sono gestiti dalla form in autonomia -->
+
+<!-- Il tag form serve a comunicare con il server. Inoltre, serve per inviare i dati inseriti dall'utente al server -->
+<!-- Get per comunicare con il server (sito) ---  Get -> lettura -> Get All / Get Id -->
+<!-- Delete cancella un elemento ---  Delete -> Cancellazione -> Delete Id (una Delete All sarebbe molto pericolosa) -->
+<!-- Post serve alla creazione di nuovi elementi --- Post -> Creazione -> Post + dati -->
+<!-- Put aggiorna un elemento esistente --- Put -> Replace / Aggiornamento (update) completo -> Put + Id + dati -->
+<!-- Patch va a integrare un dato corretto --- Patch -> correzione / update parziale -> Patch + Id + dati -->
+<!-- Get e post sono gestiti dalla form in autonomia -->
+
+
+<!-- action = url del mio server (sito web) -->
+<!-- di DEFAULT il method è GET, quindi non serve metterlo dopo action (method='get') -->
+<!-- è un attributo evento che si usa nel tag <form> per eseguire del codice JavaScript quando l'utente tenta di inviare il modulo (form), 
+     servendo principalmente a validare i dati prima dell'invio o a gestire l'invio in modo personalizzato tramite JavaScript, 
+     annullando l'invio tradizionale al server se necessario -->
