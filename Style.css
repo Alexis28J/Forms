@@ -6,4 +6,10 @@
 html, body{
     margin: 0px;
     padding: 0px;
+    background-color: gainsboro;
+}
+
+div {
+    margin: 10px;
+    padding-top: 10px;
 }

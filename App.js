@@ -1,4 +1,4 @@
-function formSubmit(event) {
+function formSubmit(event) {  //funzione che gestisce l'evento di submit del form
     event.preventDefault();    //Previene il comportamento di default del form (che è quello di ricaricare la pagina)
     const myForm = document.getElementById('my-form');
     // console.log('Form inviata'); 
@@ -12,7 +12,7 @@ function formSubmit(event) {
     console.log(data.get('gender'));
 }
 
-function getPokemon(event) {
+function getPokemon(event) {  //funzione che gestisce l'evento di submit del form per cercare un pokemon
     event.preventDefault();
     const pForm = document.getElementById('pokeform');
 

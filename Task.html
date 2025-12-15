@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Style.css">
     <title>Dati anagrafici</title>
 </head>
+
 <body>
-    
+
+    <h2 style="margin-left: 10px;">Dati anagrafici</h2>
+    <form id="personal-data" onsubmit="formSubmitTask(event)">
+
+        <!-- nome -->
+        <div>
+            <label for="name">Nome: </label>
+            <input type="text" name="name" id="name" required minlength="3">
+        </div>
+
+        <!-- cognome -->
+        <div>
+            <label for="surname">Cognome: </label>
+            <input type="text" name="surname" id="surname" required minlength="3">
+        </div>
+
+        <!-- Sesso -->
+        <div>
+            <label for="gender">Sesso: </label>
+            <select name="gender" id="gender" required>
+                <option value="">Sceglie una opzione</option>
+                <option value="n/a">Non definito</option>
+                <option value="male">Maschio</option>
+                <option value="female">Femmina</option>
+            </select>
+        </div>
+
+        <!-- Data di nascita -->
+        <div>
+            <label for="yob">Data di nascita: </label>
+            <input type="date" name="yob" id="yob">
+
+            <!-- <input type="number" name="yob" id="yob"> -->
+            <!-- input tyoe = number accetta solo valori numerici. Quindi l’utente potrà inserire un numero (ad esempio ), 
+              ma non una vera data completa (giorno/mese/anno). -->
+        </div>
+
+        <!-- Luogo di nascita -->
+        <div>
+            <label for="place-of-birth">Luogo di nascita: </label>
+            <input type="text" name="place-of-birth" id="place-of-birth" minlength="3">
+        </div>
+
+        <!-- Cittadinanza -->
+        <div>
+            <label for="nationality">Cittadinanza: </label>
+            <input type="text" name="nationality" id="nationality" minlength="3">
+        </div>
+
+        <!-- Luogo di residenza -->
+        <div>
+            <label for="residing-in">Residenza: </label>
+            <input type="text" name="residing-in" id="residing-in" placeholder="Paese e regione">
+        </div>
+
+        <!-- Provincia -->
+        <div>
+            <label for="province">Provincia: </label>
+            <input type="text" name="province" id="province">
+        </div>
+
+        <!-- Indirizzo -->
+        <div>
+            <label for="address">Indirizzo: </label>
+            <input type="text" name="address" id="address" placeholder="Via Garibaldi 10, Interno 5, 20121 Milano MI"
+                style="width: 23%;">
+        </div>
+
+        <!-- Codice fiscale -->
+        <div>
+            <label for="tax-id-number">Codice fiscale: </label>
+            <input type="text" name="tax-id-number" id="tax-id-number" maxlength="16" pattern="[A-Z0-9]{16}" placeholder="Codice alfanumerico"required>
+            <!-- maxlength - limita la lunghezza massima a 16 caratteri. -->
+             <!-- pattern - usa una regex per richiedere esattamente 16 caratteri alfanumerici -->
+        </div>
+
+        <!-- Recapito telefonico -->
+         <div>
+            <label for="telephone-number">Recapito telefonico: </label>
+            <input type="tel" name="telephone-number" id="telephone-number" pattern="^\+?[0-9\s\-]{7,15}$" placeholder=" Numero fisso o di cellulare" style="width: 15%;" required>
+         </div>
+
+        <!-- Email -->
+         <div>
+            <label for="email">E-mail: </label>
+            <input type="email" name="email" id="email" placeholder="mario.luigi@gmail.com">
+         </div>
+
+         <button type="submit" style="margin: 10px 5px; ">INVIA</button>
+    </form>
+
 </body>
+<script src="./Task.js"></script>
+
 </html>
