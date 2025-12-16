@@ -16,5 +16,13 @@ Lezione di lunedì 15 dicembre 2025
   Se usi type="email", il browser applica una propria regex di base. Quando aggiungi anche pattern, i due controlli devono entrambi essere soddisfatti. 
   A volte il tuo pattern può entrare in conflitto con la validazione nativa.
 
+  
+  
+  Lezione di Martedì 16 dicembre 2025
+
+  - https://mockapi.io/   ---  loggarsi con Github
+
+Una Mock API serve a simulare il comportamento di un'API reale (back-end) che non è ancora pronta o disponibile, permettendo agli sviluppatori front-end e di testare di procedere senza blocchi, simulare scenari di errore, integrare servizi di terze parti in modo controllato, e mantenere la privacy simulando dati sensibili, velocizzando lo sviluppo e il testing senza dipendere dal server di produzione.
+
 
 
